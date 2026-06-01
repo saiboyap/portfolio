@@ -23,7 +23,9 @@
       "Bash(n.env.local)",
       "Bash(n*.log)",
       "Bash(Set-Content -Path \".gitignore\" -Value \"node_modules/`ndist/`n.env`n.env.local`n.DS_Store`n*.log`n.vite/\" -Encoding utf8)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
