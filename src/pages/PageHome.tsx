@@ -128,6 +128,13 @@ export default function PageHome() {
           <div style={{ position:"absolute", bottom:12, left:12, width:24, height:24, borderBottom:"2px solid var(--pink)", borderLeft:"2px solid var(--pink)" }} />
           <div style={{ position:"absolute", bottom:12, right:12, width:24, height:24, borderBottom:"2px solid var(--pink)", borderRight:"2px solid var(--pink)" }} />
 
+          {/* Scan line animation */}
+          <motion.div
+            animate={{ top:["-5%","105%"] }}
+            transition={{ duration:3.5, repeat:Infinity, ease:"linear", repeatDelay:2 }}
+            style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg, transparent, rgba(0,188,212,0.6), transparent)", pointerEvents:"none", zIndex:2 }}
+          />
+
           {/* Available badge */}
           <motion.div animate={{ y:[0,-5,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
             style={{ position:"absolute", top:-16, right:-20, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(0,0,0,0.1)", zIndex:3 }}>
