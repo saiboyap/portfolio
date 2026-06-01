@@ -27,6 +27,17 @@ const projects: Project[] = [
     },
   },
   {
+    id:"p-portfolio", company:"Personal Project", color:"#e91e8c",
+    title:"Personal Portfolio Website",
+    desc:"Designed and built a production-grade personal portfolio from scratch using React 18 + TypeScript + Vite. Features fullpage.js horizontal snap scroll, Framer Motion animations, custom cursor, hamburger menu overlay, dark split-panel layout, and a creative photo treatment. Fully responsive with 6 sections: Home, Experience, Skills, Projects, Education, and Contact. Deployed on Vercel with GitHub Actions CI/CD — auto-deploys on every push to main.",
+    stack:["React 18","TypeScript","Vite","Framer Motion","fullpage.js","DM Serif Display","JetBrains Mono","CSS3","Vercel","GitHub Actions","Git"],
+    impact:"↑ Professional online presence · Auto CI/CD deployment · Fully responsive & animated",
+    links: {
+      live:"https://portfolio-two-ivory-pkidluo4w8.vercel.app",
+      github:"https://github.com/saiboyap/portfolio",
+    },
+  },
+  {
     id:"p1", company:"PayPal", color:"#7c5cfc",
     title:"Enterprise Financial Services Integration Platform",
     desc:"Unified internal and external financial systems using event-driven microservices with CQRS & Event Sourcing patterns. Spring Boot 3 services on Java 17 integrated with Apache Kafka for high-volume transactional flows. Secured with OAuth2/OIDC, monitored via Splunk & CloudWatch, deployed on AWS EKS using Terraform and Helm. Python automation scripts handled data migration and batch processing. Bash/Shell scripting used for AWS deployment automation.",
