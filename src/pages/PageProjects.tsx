@@ -21,7 +21,7 @@ const projects: Project[] = [
     stack:["React 18","TypeScript","Vite","Framer Motion","fullpage.js","DM Serif Display","JetBrains Mono","CSS3","Vercel","GitHub Actions","Git"],
     impact:"↑ Professional online presence · Auto CI/CD deployment · Fully responsive & animated",
     links: {
-      live:"https://portfolio-two-ivory-pkidluo4w8.vercel.app",
+      live:"https://portfolio-saivenkatboyapati.vercel.app",
       github:"https://github.com/saiboyap/portfolio",
     },
   },
