@@ -7,7 +7,7 @@ export default function PageHome() {
   const [roleIdx,  setRoleIdx]  = useState(0);
   const [charIdx,  setCharIdx]  = useState(0);
   const [deleting, setDeleting] = useState(false);
-  const roles = ["8+ Years of Experience","Senior Software Engineer","Full Stack Developer","Senior Java Developer","Cloud & Microservices Architect"];
+  const roles = ["8+ Yrs · PayPal · Banking · Healthcare","Senior Software Engineer","Full Stack Developer","Senior Java Developer","Cloud & Microservices Architect"];
 
   useEffect(() => {
     const cur = roles[roleIdx];
