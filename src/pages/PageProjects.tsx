@@ -15,6 +15,17 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id:"p-portfolio", company:"Personal Project", color:"#e91e8c",
+    title:"Personal Portfolio Website",
+    desc:"Designed and built a production-grade personal portfolio from scratch using React 18 + TypeScript + Vite. Features fullpage.js horizontal snap scroll, Framer Motion animations, custom cursor, hamburger menu overlay, dark split-panel layout, and a creative photo treatment. Fully responsive with 6 sections: Home, Experience, Skills, Projects, Education, and Contact. Deployed on Vercel with GitHub Actions CI/CD — auto-deploys on every push to main.",
+    stack:["React 18","TypeScript","Vite","Framer Motion","fullpage.js","DM Serif Display","JetBrains Mono","CSS3","Vercel","GitHub Actions","Git"],
+    impact:"↑ Professional online presence · Auto CI/CD deployment · Fully responsive & animated",
+    links: {
+      live:"https://portfolio-two-ivory-pkidluo4w8.vercel.app",
+      github:"https://github.com/saiboyap/portfolio",
+    },
+  },
+  {
     id:"p0", company:"Personal Project", color:"#e91e8c",
     title:"PollHub — Real-Time Event-Driven Polling Platform",
     desc:"Built a production-grade full-stack polling platform with real-time vote updates using event-driven microservices architecture. Spring Boot 3 backend on Java 17 with Apache Kafka for async vote processing. React + TypeScript frontend with WebSocket/SSE for live result streaming. JWT-secured REST APIs with role-based access. Deployed on Railway with PostgreSQL, Redis caching, and Docker containerization. CI/CD via GitHub Actions with Kubernetes-ready manifests.",
@@ -24,17 +35,6 @@ const projects: Project[] = [
       live:"https://affectionate-charisma-production-49dc.up.railway.app",
       api:"https://polling-platform-production-180d.up.railway.app/swagger-ui.html",
       github:"https://github.com/saiboyap/polling-platform",
-    },
-  },
-  {
-    id:"p-portfolio", company:"Personal Project", color:"#e91e8c",
-    title:"Personal Portfolio Website",
-    desc:"Designed and built a production-grade personal portfolio from scratch using React 18 + TypeScript + Vite. Features fullpage.js horizontal snap scroll, Framer Motion animations, custom cursor, hamburger menu overlay, dark split-panel layout, and a creative photo treatment. Fully responsive with 6 sections: Home, Experience, Skills, Projects, Education, and Contact. Deployed on Vercel with GitHub Actions CI/CD — auto-deploys on every push to main.",
-    stack:["React 18","TypeScript","Vite","Framer Motion","fullpage.js","DM Serif Display","JetBrains Mono","CSS3","Vercel","GitHub Actions","Git"],
-    impact:"↑ Professional online presence · Auto CI/CD deployment · Fully responsive & animated",
-    links: {
-      live:"https://portfolio-two-ivory-pkidluo4w8.vercel.app",
-      github:"https://github.com/saiboyap/portfolio",
     },
   },
   {
