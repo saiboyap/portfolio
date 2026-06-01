@@ -103,22 +103,19 @@ export default function PageSkills() {
             <div style={{ width:28, height:3, background:"var(--pink)", borderRadius:2 }} />
             <span style={{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Certifications</span>
           </div>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:10, marginBottom:28 }}>
+          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:10, marginBottom:28 }}>
             {certifications.map((cert,i)=>(
               <motion.div key={cert.name}
-                initial={{ opacity:0, y:16 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.06 }}
-                style={{ padding:"16px 18px", background:cert.bg, border:`1px solid ${cert.border}`, borderRadius:10, transition:"all 0.25s" }}
-                onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow=`0 8px 20px ${cert.border}`; }}
+                initial={{ opacity:0, scale:0.9 }} animate={inView?{opacity:1,scale:1}:{}} transition={{ duration:0.4, delay:i*0.06 }}
+                style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:cert.bg, border:`1px solid ${cert.border}`, borderRadius:100, transition:"all 0.25s", cursor:"default" }}
+                onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow=`0 6px 16px ${cert.border}`; }}
                 onMouseLeave={e=>{ e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow="none"; }}>
-                <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
-                  <span style={{ fontSize:22 }}>{cert.icon}</span>
-                  <span style={{ fontSize:10, color:cert.color, fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase" as const }}>{cert.issuer}</span>
+                <span style={{ fontSize:16 }}>{cert.icon}</span>
+                <div>
+                  <div style={{ fontSize:12, fontWeight:700, color:"var(--text)", lineHeight:1.2 }}>{cert.name}</div>
+                  <div style={{ fontSize:10, color:cert.color, letterSpacing:"0.05em" }}>{cert.issuer} · {cert.level}</div>
                 </div>
-                <div style={{ fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:3, lineHeight:1.3 }}>{cert.name}</div>
-                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-                  <span style={{ fontSize:11, color:"var(--muted)" }}>{cert.level}</span>
-                  <span style={{ fontSize:10, color:cert.color, fontWeight:600, background:cert.bg, padding:"2px 8px", borderRadius:100, border:`1px solid ${cert.border}` }}>{cert.year}</span>
-                </div>
+                <span style={{ fontSize:10, color:cert.color, fontWeight:700, background:cert.bg, padding:"2px 8px", borderRadius:100, border:`1px solid ${cert.border}`, marginLeft:4, whiteSpace:"nowrap" as const }}>{cert.year}</span>
               </motion.div>
             ))}
           </div>
