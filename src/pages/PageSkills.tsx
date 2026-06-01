@@ -6,6 +6,69 @@ export default function PageSkills() {
   const { ref, inView } = useInView({ triggerOnce:true, threshold:0.1 });
   const col: Record<string,string> = { Expert:"var(--teal2)", Advanced:"var(--pink)", Proficient:"var(--muted)" };
 
+  const certifications = [
+    {
+      name: "AWS Certified Developer",
+      level: "Associate",
+      issuer: "Amazon Web Services",
+      color: "#FF9900",
+      bg: "rgba(255,153,0,0.08)",
+      border: "rgba(255,153,0,0.25)",
+      icon: "☁️",
+      year: "2024",
+    },
+    {
+      name: "AWS Certified Cloud Practitioner",
+      level: "Foundational",
+      issuer: "Amazon Web Services",
+      color: "#FF9900",
+      bg: "rgba(255,153,0,0.08)",
+      border: "rgba(255,153,0,0.25)",
+      icon: "☁️",
+      year: "2024",
+    },
+    {
+      name: "AWS Certified Solutions Architect",
+      level: "Associate",
+      issuer: "Amazon Web Services",
+      color: "#FF9900",
+      bg: "rgba(255,153,0,0.08)",
+      border: "rgba(255,153,0,0.25)",
+      icon: "🏗️",
+      year: "2024",
+    },
+    {
+      name: "Google Cloud Developer",
+      level: "Professional",
+      issuer: "Google Cloud",
+      color: "#4285F4",
+      bg: "rgba(66,133,244,0.08)",
+      border: "rgba(66,133,244,0.25)",
+      icon: "🌐",
+      year: "2024",
+    },
+    {
+      name: "GitHub Copilot",
+      level: "Certified",
+      issuer: "GitHub / Microsoft",
+      color: "#6e40c9",
+      bg: "rgba(110,64,201,0.08)",
+      border: "rgba(110,64,201,0.25)",
+      icon: "🤖",
+      year: "2024",
+    },
+    {
+      name: "AI Fundamentals",
+      level: "Certified",
+      issuer: "Microsoft Azure",
+      color: "#00a4ef",
+      bg: "rgba(0,164,239,0.08)",
+      border: "rgba(0,164,239,0.25)",
+      icon: "🧠",
+      year: "2024",
+    },
+  ];
+
   return (
     <div ref={ref} style={{ width:"100vw", height:"100vh", background:"#f0f7e6", display:"flex", overflow:"hidden" }}>
 
@@ -16,13 +79,13 @@ export default function PageSkills() {
             <div style={{ width:40, height:3, background:"var(--pink)", borderRadius:2 }} />
             <span style={{ fontSize:12, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>SKILLS</span>
           </div>
-          <h2 style={{ fontFamily:"var(--serif)", fontSize:"clamp(36px,4vw,56px)", lineHeight:1.0, letterSpacing:"-0.02em", color:"var(--text)", marginBottom:16 }}>
+          <h2 style={{ fontFamily:"var(--serif)", fontSize:"clamp(32px,3.5vw,48px)", lineHeight:1.0, letterSpacing:"-0.02em", color:"var(--text)", marginBottom:16 }}>
             What<br/>I<br/>Know
           </h2>
-          <p style={{ fontSize:12, color:"var(--text-light)", lineHeight:1.75, marginBottom:16 }}>8 core domains · 70+ skills across languages, backend, frontend, cloud, data, security, architecture, and tools.</p>
-          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:6 }}>
+          <p style={{ fontSize:12, color:"var(--text-light)", lineHeight:1.75, marginBottom:20 }}>8 core domains · 70+ skills across languages, backend, frontend, cloud, data, security, architecture, and tools.</p>
+          <div style={{ display:"flex", flexDirection:"column" as const, gap:6 }}>
             {["Expert","Advanced","Proficient"].map(tag=>(
-              <div key={tag} style={{ display:"flex", alignItems:"center", gap:5, fontSize:11, color:"var(--muted)" }}>
+              <div key={tag} style={{ display:"flex", alignItems:"center", gap:6, fontSize:11, color:"var(--muted)" }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:col[tag], display:"inline-block" }}/>
                 {tag}
               </div>
@@ -31,27 +94,61 @@ export default function PageSkills() {
         </motion.div>
       </div>
 
-      {/* RIGHT — 4x2 grid scrollable */}
+      {/* RIGHT — certifications + skills grid scrollable */}
       <div style={{ flex:1, height:"100vh", overflowY:"auto", padding:"72px 40px 40px 0" }}>
+
+        {/* Certifications section */}
+        <motion.div initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16, paddingLeft:1 }}>
+            <div style={{ width:28, height:3, background:"var(--pink)", borderRadius:2 }} />
+            <span style={{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Certifications</span>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:10, marginBottom:28 }}>
+            {certifications.map((cert,i)=>(
+              <motion.div key={cert.name}
+                initial={{ opacity:0, y:16 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.06 }}
+                style={{ padding:"16px 18px", background:cert.bg, border:`1px solid ${cert.border}`, borderRadius:10, transition:"all 0.25s" }}
+                onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow=`0 8px 20px ${cert.border}`; }}
+                onMouseLeave={e=>{ e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow="none"; }}>
+                <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+                  <span style={{ fontSize:22 }}>{cert.icon}</span>
+                  <span style={{ fontSize:10, color:cert.color, fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase" as const }}>{cert.issuer}</span>
+                </div>
+                <div style={{ fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:3, lineHeight:1.3 }}>{cert.name}</div>
+                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                  <span style={{ fontSize:11, color:"var(--muted)" }}>{cert.level}</span>
+                  <span style={{ fontSize:10, color:cert.color, fontWeight:600, background:cert.bg, padding:"2px 8px", borderRadius:100, border:`1px solid ${cert.border}` }}>{cert.year}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Skills divider */}
+        <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16, paddingLeft:1 }}>
+          <div style={{ width:28, height:3, background:"var(--teal)", borderRadius:2 }} />
+          <span style={{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Technical Skills</span>
+        </div>
+
+        {/* Skills grid */}
         <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:1, background:"rgba(0,0,0,0.06)", marginLeft:1 }}>
           {skillCategories.map((cat,i)=>(
             <motion.div key={cat.id}
-              initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.07 }}
-              style={{ padding:"24px 22px", background:"#f0f7e6", transition:"background 0.25s" }}
+              initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.06 }}
+              style={{ padding:"20px 18px", background:"#f0f7e6", transition:"background 0.25s" }}
               onMouseEnter={e=>(e.currentTarget.style.background="#e4f0d8")}
               onMouseLeave={e=>(e.currentTarget.style.background="#f0f7e6")}>
-              {/* Icon circle */}
-              <div style={{ width:44, height:44, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:12 }}>
-                <span style={{ fontSize:12, fontWeight:700, color:"#fff", letterSpacing:"0.04em" }}>
+              <div style={{ width:40, height:40, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10 }}>
+                <span style={{ fontSize:11, fontWeight:700, color:"#fff", letterSpacing:"0.04em" }}>
                   {["PL","BE","FE","CL","DB","SE","AR","TL"][i]||"SK"}
                 </span>
               </div>
-              <div style={{ fontSize:14, fontWeight:700, color:"var(--text)", marginBottom:14, fontFamily:"var(--sans)" }}>{cat.label}</div>
-              <div style={{ display:"flex", flexDirection:"column" as const, gap:5 }}>
-                {cat.skills.slice(0,6).map(s=>(
-                  <div key={s.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", fontSize:11, gap:8 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:12, fontFamily:"var(--sans)" }}>{cat.label}</div>
+              <div style={{ display:"flex", flexDirection:"column" as const, gap:4 }}>
+                {cat.skills.slice(0,5).map(s=>(
+                  <div key={s.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", fontSize:10, gap:6 }}>
                     <span style={{ color:"var(--text-light)", flex:1, lineHeight:1.3 }}>{s.name}</span>
-                    <span style={{ fontSize:9, color:col[s.tag]||"var(--muted)", fontWeight:700, letterSpacing:"0.06em", flexShrink:0 }}>{s.tag.slice(0,3).toUpperCase()}</span>
+                    <span style={{ fontSize:8, color:col[s.tag]||"var(--muted)", fontWeight:700, letterSpacing:"0.06em", flexShrink:0 }}>{s.tag.slice(0,3).toUpperCase()}</span>
                   </div>
                 ))}
               </div>
