@@ -5,12 +5,12 @@ import { skillCategories } from "@/data/resume";
 const col: Record<string,string> = { Expert:"var(--teal2)", Advanced:"var(--pink)", Proficient:"var(--muted)" };
 
 const certifications = [
-  { name:"AWS Certified Developer", level:"Associate", issuer:"Amazon Web Services", color:"#FF9900", bg:"rgba(255,153,0,0.08)", border:"rgba(255,153,0,0.25)", icon:"☁️", year:"2024" },
-  { name:"AWS Cloud Practitioner", level:"Foundational", issuer:"Amazon Web Services", color:"#FF9900", bg:"rgba(255,153,0,0.08)", border:"rgba(255,153,0,0.25)", icon:"☁️", year:"2024" },
+  { name:"AWS Certified Developer", level:"Associate", issuer:"Amazon Web Services", color:"#FF9900", bg:"rgba(255,153,0,0.08)", border:"rgba(255,153,0,0.25)", icon:"☁️", year:"2022" },
+  { name:"AWS Cloud Practitioner", level:"Foundational", issuer:"Amazon Web Services", color:"#FF9900", bg:"rgba(255,153,0,0.08)", border:"rgba(255,153,0,0.25)", icon:"☁️", year:"2023" },
   { name:"AWS Solutions Architect", level:"Associate", issuer:"Amazon Web Services", color:"#FF9900", bg:"rgba(255,153,0,0.08)", border:"rgba(255,153,0,0.25)", icon:"🏗️", year:"2024" },
-  { name:"Google Cloud Developer", level:"Professional", issuer:"Google Cloud", color:"#4285F4", bg:"rgba(66,133,244,0.08)", border:"rgba(66,133,244,0.25)", icon:"🌐", year:"2024" },
-  { name:"GitHub Copilot", level:"Certified", issuer:"GitHub / Microsoft", color:"#6e40c9", bg:"rgba(110,64,201,0.08)", border:"rgba(110,64,201,0.25)", icon:"🤖", year:"2024" },
-  { name:"AI Fundamentals", level:"Certified", issuer:"Microsoft Azure", color:"#00a4ef", bg:"rgba(0,164,239,0.08)", border:"rgba(0,164,239,0.25)", icon:"🧠", year:"2024" },
+  { name:"Google Cloud Developer", level:"Professional", issuer:"Google Cloud", color:"#4285F4", bg:"rgba(66,133,244,0.08)", border:"rgba(66,133,244,0.25)", icon:"🌐", year:"2025" },
+  { name:"GitHub Copilot", level:"Certified", issuer:"GitHub / Microsoft", color:"#6e40c9", bg:"rgba(110,64,201,0.08)", border:"rgba(110,64,201,0.25)", icon:"🤖", year:"2026" },
+  { name:"AI Fundamentals", level:"Certified", issuer:"Microsoft Azure", color:"#00a4ef", bg:"rgba(0,164,239,0.08)", border:"rgba(0,164,239,0.25)", icon:"🧠", year:"2026" },
 ];
 
 export default function PageSkills() {
