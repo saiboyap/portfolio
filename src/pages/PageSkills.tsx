@@ -94,35 +94,35 @@ export default function PageSkills() {
         </motion.div>
       </div>
 
-      {/* RIGHT — certifications + skills grid scrollable */}
-      <div style={{ flex:1, height:"100vh", overflowY:"auto", padding:"72px 40px 40px 0" }}>
+      {/* RIGHT — certifications + skills grid */}
+      <div style={{ flex:1, height:"100vh", overflowY:"auto", padding:"56px 32px 24px 0" }}>
 
         {/* Certifications section */}
         <motion.div initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }}>
-          <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16, paddingLeft:1 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10, paddingLeft:1 }}>
             <div style={{ width:28, height:3, background:"var(--pink)", borderRadius:2 }} />
             <span style={{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Certifications</span>
           </div>
-          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:10, marginBottom:28 }}>
+          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:7, marginBottom:16 }}>
             {certifications.map((cert,i)=>(
               <motion.div key={cert.name}
                 initial={{ opacity:0, scale:0.9 }} animate={inView?{opacity:1,scale:1}:{}} transition={{ duration:0.4, delay:i*0.06 }}
-                style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:cert.bg, border:`1px solid ${cert.border}`, borderRadius:100, transition:"all 0.25s", cursor:"default" }}
+                style={{ display:"flex", alignItems:"center", gap:10, padding:"7px 12px", background:cert.bg, border:`1px solid ${cert.border}`, borderRadius:100, transition:"all 0.25s", cursor:"default" }}
                 onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow=`0 6px 16px ${cert.border}`; }}
                 onMouseLeave={e=>{ e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow="none"; }}>
-                <span style={{ fontSize:16 }}>{cert.icon}</span>
+                <span style={{ fontSize:13 }}>{cert.icon}</span>
                 <div>
-                  <div style={{ fontSize:12, fontWeight:700, color:"var(--text)", lineHeight:1.2 }}>{cert.name}</div>
-                  <div style={{ fontSize:10, color:cert.color, letterSpacing:"0.05em" }}>{cert.issuer} · {cert.level}</div>
+                  <div style={{ fontSize:11, fontWeight:700, color:"var(--text)", lineHeight:1.2 }}>{cert.name}</div>
+                  <div style={{ fontSize:9, color:cert.color, letterSpacing:"0.05em" }}>{cert.issuer} · {cert.level}</div>
                 </div>
-                <span style={{ fontSize:10, color:cert.color, fontWeight:700, background:cert.bg, padding:"2px 8px", borderRadius:100, border:`1px solid ${cert.border}`, marginLeft:4, whiteSpace:"nowrap" as const }}>{cert.year}</span>
+                <span style={{ fontSize:9, color:cert.color, fontWeight:700, background:cert.bg, padding:"2px 6px", borderRadius:100, border:`1px solid ${cert.border}`, marginLeft:4, whiteSpace:"nowrap" as const }}>{cert.year}</span>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
         {/* Skills divider */}
-        <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16, paddingLeft:1 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10, paddingLeft:1 }}>
           <div style={{ width:28, height:3, background:"var(--teal)", borderRadius:2 }} />
           <span style={{ fontSize:11, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Technical Skills</span>
         </div>
@@ -132,18 +132,18 @@ export default function PageSkills() {
           {skillCategories.map((cat,i)=>(
             <motion.div key={cat.id}
               initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.06 }}
-              style={{ padding:"20px 18px", background:"#f0f7e6", transition:"background 0.25s" }}
+              style={{ padding:"14px 14px", background:"#f0f7e6", transition:"background 0.25s" }}
               onMouseEnter={e=>(e.currentTarget.style.background="#e4f0d8")}
               onMouseLeave={e=>(e.currentTarget.style.background="#f0f7e6")}>
-              <div style={{ width:40, height:40, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10 }}>
-                <span style={{ fontSize:11, fontWeight:700, color:"#fff", letterSpacing:"0.04em" }}>
+              <div style={{ width:32, height:32, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:6 }}>
+                <span style={{ fontSize:10, fontWeight:700, color:"#fff", letterSpacing:"0.04em" }}>
                   {["PL","BE","FE","CL","DB","SE","AR","TL"][i]||"SK"}
                 </span>
               </div>
-              <div style={{ fontSize:13, fontWeight:700, color:"var(--text)", marginBottom:12, fontFamily:"var(--sans)" }}>{cat.label}</div>
-              <div style={{ display:"flex", flexDirection:"column" as const, gap:4 }}>
-                {cat.skills.slice(0,5).map(s=>(
-                  <div key={s.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", fontSize:10, gap:6 }}>
+              <div style={{ fontSize:11, fontWeight:700, color:"var(--text)", marginBottom:8, fontFamily:"var(--sans)" }}>{cat.label}</div>
+              <div style={{ display:"flex", flexDirection:"column" as const, gap:3 }}>
+                {cat.skills.slice(0,4).map(s=>(
+                  <div key={s.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", fontSize:9, gap:6 }}>
                     <span style={{ color:"var(--text-light)", flex:1, lineHeight:1.3 }}>{s.name}</span>
                     <span style={{ fontSize:8, color:col[s.tag]||"var(--muted)", fontWeight:700, letterSpacing:"0.06em", flexShrink:0 }}>{s.tag.slice(0,3).toUpperCase()}</span>
                   </div>
@@ -152,7 +152,6 @@ export default function PageSkills() {
             </motion.div>
           ))}
         </div>
-        <div style={{ height:20 }}/>
       </div>
     </div>
   );
