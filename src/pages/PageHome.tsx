@@ -105,78 +105,76 @@ export default function PageHome() {
       </div>
 
       <motion.div initial={{ opacity:0, x:40 }} animate={{ opacity:1, x:0 }} transition={{ duration:1, delay:0.3 }}
-        style={{ position:"relative", height:"100%", overflow:"hidden", background:"#c8eaf0", display:"flex", alignItems:"center", justifyContent:"center" }}>
+        style={{ position:"relative", height:"100%", overflow:"hidden", display:"flex", alignItems:"center", justifyContent:"center" }}>
 
-        {/* Animated background circles */}
-        <motion.div animate={{ scale:[1,1.08,1], opacity:[0.15,0.25,0.15] }} transition={{ duration:6, repeat:Infinity, ease:"easeInOut" }}
-          style={{ position:"absolute", width:420, height:420, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.3)", top:"50%", left:"50%", transform:"translate(-50%,-50%)", pointerEvents:"none" }} />
-        <motion.div animate={{ scale:[1,1.12,1], opacity:[0.1,0.2,0.1] }} transition={{ duration:8, repeat:Infinity, ease:"easeInOut", delay:1 }}
-          style={{ position:"absolute", width:320, height:320, borderRadius:"50%", border:"1px solid rgba(233,30,140,0.2)", top:"50%", left:"50%", transform:"translate(-50%,-50%)", pointerEvents:"none" }} />
-        <motion.div animate={{ scale:[1,1.15,1] }} transition={{ duration:10, repeat:Infinity, ease:"easeInOut", delay:2 }}
-          style={{ position:"absolute", width:220, height:220, borderRadius:"50%", background:"radial-gradient(circle, rgba(0,188,212,0.08) 0%, transparent 70%)", top:"50%", left:"50%", transform:"translate(-50%,-50%)", pointerEvents:"none" }} />
+        {/* Split background — top teal, bottom light */}
+        <div style={{ position:"absolute", inset:0, background:"linear-gradient(160deg, #9ed8e4 0%, #c8eaf0 45%, #b8dfe8 100%)", zIndex:0 }} />
 
-        {/* Decorative dot grid top right */}
-        <div style={{ position:"absolute", top:32, right:32, backgroundImage:"radial-gradient(circle, rgba(0,188,212,0.35) 1.5px, transparent 1.5px)", backgroundSize:"14px 14px", width:100, height:100, pointerEvents:"none" }} />
+        {/* Large pink geometric shape top right */}
+        <div style={{ position:"absolute", top:-60, right:-60, width:300, height:300, borderRadius:"50%", background:"rgba(233,30,140,0.08)", zIndex:1 }} />
 
-        {/* Decorative dot grid bottom left */}
-        <div style={{ position:"absolute", bottom:80, left:20, backgroundImage:"radial-gradient(circle, rgba(233,30,140,0.2) 1.5px, transparent 1.5px)", backgroundSize:"14px 14px", width:80, height:80, pointerEvents:"none" }} />
+        {/* Teal rectangle accent bottom left */}
+        <div style={{ position:"absolute", bottom:0, left:0, width:"45%", height:"35%", background:"rgba(0,188,212,0.12)", zIndex:1 }} />
 
-        {/* Floating + signs */}
-        <motion.div animate={{ y:[0,-8,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
-          style={{ position:"absolute", top:"18%", left:"12%", fontSize:20, color:"var(--teal)", opacity:0.5, fontWeight:300, pointerEvents:"none" }}>+</motion.div>
-        <motion.div animate={{ y:[0,8,0] }} transition={{ duration:4, repeat:Infinity, ease:"easeInOut", delay:1 }}
-          style={{ position:"absolute", bottom:"22%", right:"10%", fontSize:16, color:"var(--pink)", opacity:0.4, fontWeight:300, pointerEvents:"none" }}>+</motion.div>
+        {/* Animated ring */}
+        <motion.div animate={{ rotate:360 }} transition={{ duration:20, repeat:Infinity, ease:"linear" }}
+          style={{ position:"absolute", width:500, height:500, borderRadius:"50%", border:"1px dashed rgba(0,188,212,0.2)", zIndex:1, pointerEvents:"none" }} />
 
-        {/* Photo frame */}
-        <div style={{ position:"relative", width:280, height:340, zIndex:2 }}>
-          <img src="/avatar.jpg" alt="Sai Venkat Boyapati"
-            style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top",
-              filter:"contrast(1.05) brightness(0.95)",
-              clipPath:"polygon(0 4%, 4% 0, 100% 0, 100% 96%, 96% 100%, 0 100%)" }} />
+        {/* Dot grids */}
+        <div style={{ position:"absolute", top:24, right:24, backgroundImage:"radial-gradient(circle, rgba(0,188,212,0.4) 1.5px, transparent 1.5px)", backgroundSize:"14px 14px", width:112, height:112, zIndex:2, pointerEvents:"none" }} />
+        <div style={{ position:"absolute", bottom:60, left:16, backgroundImage:"radial-gradient(circle, rgba(233,30,140,0.25) 1.5px, transparent 1.5px)", backgroundSize:"12px 12px", width:80, height:80, zIndex:2, pointerEvents:"none" }} />
 
-          {/* Gradient bottom fade */}
-          <div style={{ position:"absolute", bottom:0, left:0, right:0, height:"25%", background:"linear-gradient(to top, rgba(200,234,240,0.6) 0%, transparent 100%)", pointerEvents:"none" }} />
+        {/* Floating plus signs */}
+        <motion.div animate={{ y:[0,-10,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
+          style={{ position:"absolute", top:"15%", left:"8%", fontSize:22, color:"var(--teal)", opacity:0.5, zIndex:2, pointerEvents:"none" }}>+</motion.div>
+        <motion.div animate={{ y:[0,10,0] }} transition={{ duration:4, repeat:Infinity, ease:"easeInOut", delay:1.5 }}
+          style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, zIndex:2, pointerEvents:"none" }}>+</motion.div>
+        <motion.div animate={{ y:[0,-7,0] }} transition={{ duration:5, repeat:Infinity, ease:"easeInOut", delay:0.7 }}
+          style={{ position:"absolute", top:"55%", left:"6%", fontSize:14, color:"var(--teal)", opacity:0.35, zIndex:2, pointerEvents:"none" }}>+</motion.div>
 
-          {/* Scan line animation */}
-          <motion.div
-            animate={{ top:["-5%","105%"] }}
-            transition={{ duration:3.5, repeat:Infinity, ease:"linear", repeatDelay:2 }}
-            style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg, transparent, rgba(0,188,212,0.7), transparent)", pointerEvents:"none", zIndex:3 }} />
+        {/* Photo container with pink left border accent */}
+        <div style={{ position:"relative", zIndex:3 }}>
+          {/* Pink vertical accent bar behind photo */}
+          <div style={{ position:"absolute", left:-12, top:"10%", bottom:"10%", width:4, background:"var(--pink)", borderRadius:2 }} />
 
-          {/* Corner brackets — teal top, pink bottom */}
-          <div style={{ position:"absolute", top:10, left:10, width:24, height:24, borderTop:"2px solid var(--teal)", borderLeft:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", top:10, right:10, width:24, height:24, borderTop:"2px solid var(--teal)", borderRight:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, left:10, width:24, height:24, borderBottom:"2px solid var(--pink)", borderLeft:"2px solid var(--pink)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, right:10, width:24, height:24, borderBottom:"2px solid var(--pink)", borderRight:"2px solid var(--pink)", opacity:0.8 }} />
+          {/* Teal offset frame */}
+          <div style={{ position:"absolute", top:12, left:12, right:-12, bottom:-12, border:"1px solid rgba(0,188,212,0.4)", borderRadius:2, zIndex:-1 }} />
 
-          {/* Available badge — top right floating */}
-          <motion.div animate={{ y:[0,-5,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
-            style={{ position:"absolute", top:-18, right:-24, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(0,188,212,0.2)", zIndex:4 }}>
-            <div style={{ display:"flex", alignItems:"center", gap:6, fontSize:11, color:"var(--text)", fontWeight:600 }}>
-              <motion.span animate={{ opacity:[1,0.3,1] }} transition={{ duration:1.5, repeat:Infinity }}
-                style={{ width:6, height:6, borderRadius:"50%", background:"#4ade80", boxShadow:"0 0 6px #4ade80", display:"inline-block" }}/>
-              Available for Hire
-            </div>
-          </motion.div>
+          {/* Photo */}
+          <div style={{ width:260, height:320, overflow:"hidden", borderRadius:2, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
+            <img src="/avatar.jpg" alt="Sai Venkat Boyapati"
+              style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top",
+                filter:"contrast(1.08) brightness(0.92) saturate(0.95)" }} />
+          </div>
 
-          {/* Current Role badge — bottom left floating */}
-          <motion.div animate={{ y:[0,5,0] }} transition={{ duration:3.5, repeat:Infinity, ease:"easeInOut", delay:1 }}
-            style={{ position:"absolute", bottom:-18, left:-24, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(233,30,140,0.15)", zIndex:4 }}>
-            <div style={{ fontSize:9, color:"var(--muted)", marginBottom:2 }}>Current Role</div>
-            <div style={{ fontSize:11, color:"var(--text)", fontWeight:700 }}>Senior Software Engineer @ PayPal</div>
-          </motion.div>
+          {/* Scan line */}
+          <motion.div animate={{ top:["-5%","105%"] }} transition={{ duration:3.5, repeat:Infinity, ease:"linear", repeatDelay:2 }}
+            style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg,transparent,rgba(0,188,212,0.7),transparent)", pointerEvents:"none", zIndex:4 }} />
         </div>
 
-        {/* Vertical label */}
-        <div style={{ position:"absolute", right:16, top:"50%", transform:"translateY(-50%) rotate(90deg)", fontSize:9, color:"rgba(30,37,53,0.3)", letterSpacing:"0.2em", textTransform:"uppercase", fontFamily:"var(--mono)", whiteSpace:"nowrap", pointerEvents:"none" }}>
-          Java · Spring · Cloud · AWS
-        </div>
+        {/* Available badge */}
+        <motion.div animate={{ y:[0,-5,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
+          style={{ position:"absolute", top:"12%", right:"6%", background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(0,188,212,0.2)", zIndex:5 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:6, fontSize:11, color:"var(--text)", fontWeight:600 }}>
+            <motion.span animate={{ opacity:[1,0.3,1] }} transition={{ duration:1.5, repeat:Infinity }}
+              style={{ width:6, height:6, borderRadius:"50%", background:"#4ade80", boxShadow:"0 0 6px #4ade80", display:"inline-block" }}/>
+            Available for Hire
+          </div>
+        </motion.div>
+
+        {/* Current Role badge */}
+        <motion.div animate={{ y:[0,5,0] }} transition={{ duration:3.5, repeat:Infinity, ease:"easeInOut", delay:1 }}
+          style={{ position:"absolute", bottom:"16%", left:"4%", background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(233,30,140,0.12)", zIndex:5 }}>
+          <div style={{ fontSize:9, color:"var(--muted)", marginBottom:2 }}>Current Role</div>
+          <div style={{ fontSize:11, color:"var(--text)", fontWeight:700 }}>Senior Software Engineer @ PayPal</div>
+        </motion.div>
 
         {/* MY PROJECTS button */}
-        <div style={{ position:"absolute", bottom:0, right:0, background:"var(--pink)", padding:"16px 28px", cursor:"pointer", zIndex:4 }}
+        <div style={{ position:"absolute", bottom:0, right:0, background:"var(--pink)", padding:"16px 28px", cursor:"pointer", zIndex:6 }}
           onClick={()=>{ if(typeof fullpage_api!=="undefined") fullpage_api.moveTo(1,3); }}>
           <span style={{ fontSize:12, fontWeight:700, color:"#fff", letterSpacing:"0.15em", textTransform:"uppercase" }}>MY PROJECTS ↗</span>
         </div>
+
       </motion.div>
     </div>
   );
