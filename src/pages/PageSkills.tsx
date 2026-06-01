@@ -95,7 +95,7 @@ export default function PageSkills() {
       </div>
 
       {/* RIGHT — certifications + skills grid scrollable */}
-      <div className="scrollable-right" style={{ flex:1, height:"100vh", overflowY:"auto", padding:"72px 40px 40px 0" }}>
+      <div style={{ flex:1, height:"100vh", overflowY:"auto", padding:"72px 40px 40px 0" }}>
 
         {/* Certifications section */}
         <motion.div initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }}>

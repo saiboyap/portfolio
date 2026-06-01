@@ -43,19 +43,6 @@ export default function App() {
     let isAnimating = false;
 
     const handleWheel = (e: WheelEvent) => {
-      const scrollable = document.querySelector(".scrollable-right") as HTMLElement;
-
-      // If there's a scrollable panel and the cursor is over it
-      if (scrollable && scrollable.contains(e.target as Node)) {
-        const atBottom = scrollable.scrollTop + scrollable.clientHeight >= scrollable.scrollHeight - 5;
-        const atTop = scrollable.scrollTop <= 5;
-
-        // Scrolling down but not at bottom — let it scroll naturally
-        if (e.deltaY > 0 && !atBottom) return;
-        // Scrolling up but not at top — let it scroll naturally
-        if (e.deltaY < 0 && !atTop) return;
-      }
-
       e.preventDefault();
       e.stopPropagation();
 
