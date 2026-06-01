@@ -1,0 +1,70 @@
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/dm-sans/700.css";
+@import "@fontsource/dm-serif-display/400.css";
+@import "@fontsource/dm-serif-display/400-italic.css";
+@import "tailwindcss";
+@import "fullpage.js/dist/fullpage.css";
+
+:root {
+  --bg:         #c8eaf0;
+  --bg2:        #b8dfe8;
+  --bg-dark:    #1e2535;
+  --bg-dark2:   #252d40;
+  --text:       #1e2535;
+  --text-light: #4a5568;
+  --white:      #ffffff;
+  --pink:       #e91e8c;
+  --teal:       #00bcd4;
+  --teal2:      #00acc1;
+  --navy:       #1e2535;
+  --muted:      #7a8899;
+  --border:     rgba(30,37,53,0.1);
+  --sans:       'DM Sans', sans-serif;
+  --serif:      'DM Serif Display', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; cursor: default; }
+#root { height: 100%; }
+
+/* Decorative plus signs */
+.plus {
+  position: absolute;
+  color: var(--teal);
+  font-size: 20px;
+  font-weight: 300;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.3;
+}
+.dot-grid::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: radial-gradient(circle, var(--teal) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+/* Circular decorative lines */
+.circle-deco {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0,188,212,0.2);
+  pointer-events: none;
+}
+
+::selection { background: rgba(233,30,140,0.2); }
+
+/* fullpage overrides */
+#fp-nav { display: none !important; }
+.fp-watermark { display: none !important; }

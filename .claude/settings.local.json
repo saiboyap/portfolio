@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(npm list *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\svboy\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-svboy-portfolio\\\\bd536c73-5ad5-4554-a3e0-fa1f855b1b69\\\\tasks\\\\bfupqyrps.output\")",
+      "Bash(curl *)",
+      "Bash(where chromium *)",
+      "Bash(where chromium-browser *)",
+      "Bash(where chrome *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(ping -n 4 127.0.0.1)",
+      "Bash(Start-Sleep -Seconds 4)",
+      "Bash(Get-Content \"C:\\\\Users\\\\svboy\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-svboy-portfolio\\\\bd8388f5-2727-4be8-9d38-460c4b260328\\\\tasks\\\\bt233mell.output\" -Tail 20)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:5173/\" -UseBasicParsing -TimeoutSec 5 | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Get-Command *)",
+      "Bash(ndist/)",
+      "Bash(n.env.local)",
+      "Bash(n*.log)",
+      "Bash(Set-Content -Path \".gitignore\" -Value \"node_modules/`ndist/`n.env`n.env.local`n.DS_Store`n*.log`n.vite/\" -Encoding utf8)"
+    ]
+  }
+}
