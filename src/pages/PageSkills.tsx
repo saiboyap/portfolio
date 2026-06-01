@@ -95,7 +95,7 @@ export default function PageSkills() {
       </div>
 
       {/* RIGHT — certifications + skills grid, no scroll */}
-      <div style={{ flex:1, height:"100vh", overflowY:"hidden", padding:"48px 28px 16px 0", display:"flex", flexDirection:"column" as const, justifyContent:"space-between" }}>
+      <div style={{ flex:1, height:"100vh", overflowY:"hidden", padding:"36px 28px 8px 0", display:"flex", flexDirection:"column" as const, justifyContent:"flex-start" }}>
 
         {/* Certifications section */}
         <motion.div initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.7 }}>
@@ -103,7 +103,7 @@ export default function PageSkills() {
             <div style={{ width:28, height:3, background:"var(--pink)", borderRadius:2 }} />
             <span style={{ fontSize:10, fontWeight:600, color:"var(--muted)", letterSpacing:"0.15em", textTransform:"uppercase" as const }}>Certifications</span>
           </div>
-          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:6, marginBottom:12 }}>
+          <div style={{ display:"flex", flexWrap:"wrap" as const, gap:6, marginBottom:10 }}>
             {certifications.map((cert,i)=>(
               <motion.div key={cert.name}
                 initial={{ opacity:0, scale:0.9 }} animate={inView?{opacity:1,scale:1}:{}} transition={{ duration:0.4, delay:i*0.06 }}
@@ -128,21 +128,21 @@ export default function PageSkills() {
         </div>
 
         {/* Skills grid */}
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:1, background:"rgba(0,0,0,0.06)", marginLeft:1, flex:1 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:1, background:"rgba(0,0,0,0.06)", marginLeft:1, flex:1, marginBottom:0 }}>
           {skillCategories.map((cat,i)=>(
             <motion.div key={cat.id}
               initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:i*0.06 }}
-              style={{ padding:"10px 12px", background:"#f0f7e6", transition:"background 0.25s" }}
+              style={{ padding:"14px 12px", background:"#f0f7e6", transition:"background 0.25s" }}
               onMouseEnter={e=>(e.currentTarget.style.background="#e4f0d8")}
               onMouseLeave={e=>(e.currentTarget.style.background="#f0f7e6")}>
-              <div style={{ width:28, height:28, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:6 }}>
+              <div style={{ width:28, height:28, borderRadius:"50%", background:"var(--teal)", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:8 }}>
                 <span style={{ fontSize:9, fontWeight:700, color:"#fff", letterSpacing:"0.04em" }}>
                   {["PL","BE","FE","CL","DB","SE","AR","TL"][i]||"SK"}
                 </span>
               </div>
-              <div style={{ fontSize:10, fontWeight:700, color:"var(--text)", marginBottom:6, fontFamily:"var(--sans)" }}>{cat.label}</div>
-              <div style={{ display:"flex", flexDirection:"column" as const, gap:2 }}>
-                {cat.skills.slice(0,3).map(s=>(
+              <div style={{ fontSize:10, fontWeight:700, color:"var(--text)", marginBottom:8, fontFamily:"var(--sans)" }}>{cat.label}</div>
+              <div style={{ display:"flex", flexDirection:"column" as const, gap:4 }}>
+                {cat.skills.slice(0,4).map(s=>(
                   <div key={s.name} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", fontSize:8, gap:6 }}>
                     <span style={{ color:"var(--text-light)", flex:1, lineHeight:1.3 }}>{s.name}</span>
                     <span style={{ fontSize:8, color:col[s.tag]||"var(--muted)", fontWeight:700, letterSpacing:"0.06em", flexShrink:0 }}>{s.tag.slice(0,3).toUpperCase()}</span>
