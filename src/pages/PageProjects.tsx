@@ -121,7 +121,7 @@ export default function PageProjects() {
       </div>
 
       {/* RIGHT — project accordion */}
-      <div className="scrollable-content" style={{ overflowY:"auto", padding:"80px 80px 40px 40px", display:"flex", flexDirection:"column", justifyContent:"flex-start" }}>
+      <div className="scrollable-right" style={{ overflowY:"auto", padding:"80px 80px 40px 40px", display:"flex", flexDirection:"column", justifyContent:"flex-start" }}>
         {projects.map((p,i)=>{
           const isOpen = active===p.id;
           return (

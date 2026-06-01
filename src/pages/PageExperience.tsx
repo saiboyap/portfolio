@@ -27,7 +27,7 @@ export default function PageExperience() {
       </div>
 
       {/* RIGHT — scrollable accordion list */}
-      <div style={{ flex:1, height:"100vh", overflowY:"auto", paddingTop:80, paddingBottom:40, paddingRight:80, paddingLeft:40 }}>
+      <div className="scrollable-right" style={{ flex:1, height:"100vh", overflowY:"auto", paddingTop:80, paddingBottom:40, paddingRight:80, paddingLeft:40 }}>
         {experience.map((job,i)=>{
           const isOpen = open===job.id;
           return (
