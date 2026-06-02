@@ -122,7 +122,7 @@ export default function PageHome() {
           style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, pointerEvents:"none" }}>+</motion.div>
 
         {/* Photo frame */}
-        <div style={{ position:"relative", width:280, height:340, zIndex:2 }}>
+        <div style={{ position:"relative", width:300, height:360, zIndex:2, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
           <img src="/avatar.jpg" alt="Sai Venkat Boyapati"
             style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top",
               filter:"contrast(1.05) brightness(0.95)",
@@ -136,15 +136,15 @@ export default function PageHome() {
             style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg,transparent,rgba(0,188,212,0.7),transparent)", pointerEvents:"none", zIndex:3 }} />
 
           {/* Corner brackets */}
-          <div style={{ position:"absolute", top:10, left:10, width:24, height:24, borderTop:"2px solid var(--teal)", borderLeft:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", top:10, right:10, width:24, height:24, borderTop:"2px solid var(--teal)", borderRight:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, left:10, width:24, height:24, borderBottom:"2px solid var(--pink)", borderLeft:"2px solid var(--pink)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, right:10, width:24, height:24, borderBottom:"2px solid var(--pink)", borderRight:"2px solid var(--pink)", opacity:0.8 }} />
+          <div style={{ position:"absolute", top:10, left:10, width:32, height:32, borderTop:"2px solid var(--teal)", borderLeft:"2px solid var(--teal)", opacity:0.8 }} />
+          <div style={{ position:"absolute", top:10, right:10, width:32, height:32, borderTop:"2px solid var(--teal)", borderRight:"2px solid var(--teal)", opacity:0.8 }} />
+          <div style={{ position:"absolute", bottom:10, left:10, width:32, height:32, borderBottom:"2px solid var(--pink)", borderLeft:"2px solid var(--pink)", opacity:0.8 }} />
+          <div style={{ position:"absolute", bottom:10, right:10, width:32, height:32, borderBottom:"2px solid var(--pink)", borderRight:"2px solid var(--pink)", opacity:0.8 }} />
 
           {/* Available badge */}
           <motion.div animate={{ y:[0,-5,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
-            style={{ position:"absolute", top:-16, right:-20, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(0,188,212,0.2)", zIndex:4 }}>
-            <div style={{ display:"flex", alignItems:"center", gap:6, fontSize:11, color:"var(--text)", fontWeight:600 }}>
+            style={{ position:"absolute", top:-20, right:-28, background:"#fff", borderRadius:8, padding:"10px 16px", boxShadow:"0 8px 24px rgba(0,188,212,0.2)", zIndex:4 }}>
+            <div style={{ display:"flex", alignItems:"center", gap:6, fontSize:12, color:"var(--text)", fontWeight:600 }}>
               <motion.span animate={{ opacity:[1,0.3,1] }} transition={{ duration:1.5, repeat:Infinity }}
                 style={{ width:6, height:6, borderRadius:"50%", background:"#4ade80", boxShadow:"0 0 6px #4ade80", display:"inline-block" }}/>
               Available for Hire
@@ -153,9 +153,9 @@ export default function PageHome() {
 
           {/* Role badge */}
           <motion.div animate={{ y:[0,5,0] }} transition={{ duration:3.5, repeat:Infinity, ease:"easeInOut", delay:1 }}
-            style={{ position:"absolute", bottom:-16, left:-20, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(233,30,140,0.15)", zIndex:4 }}>
+            style={{ position:"absolute", bottom:-20, left:-28, background:"#fff", borderRadius:8, padding:"8px 14px", boxShadow:"0 8px 24px rgba(233,30,140,0.15)", zIndex:4 }}>
             <div style={{ fontSize:9, color:"var(--muted)", marginBottom:2 }}>Current Role</div>
-            <div style={{ fontSize:12, color:"var(--text)", fontWeight:700 }}>Senior Software Engineer @ PayPal</div>
+            <div style={{ fontSize:13, color:"var(--text)", fontWeight:700 }}>Senior Software Engineer @ PayPal</div>
           </motion.div>
         </div>
 
