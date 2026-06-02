@@ -105,7 +105,7 @@ export default function PageHome() {
       </div>
 
       <motion.div initial={{ opacity:0, x:40 }} animate={{ opacity:1, x:0 }} transition={{ duration:1, delay:0.3 }}
-        style={{ position:"relative", height:"100%", overflow:"hidden", background:"var(--bg)", display:"flex", alignItems:"center", justifyContent:"center" }}>
+        style={{ position:"relative", height:"100%", overflow:"hidden", background:"var(--bg)", display:"flex", alignItems:"center", justifyContent:"center", paddingRight:"40px" }}>
 
         {/* Background circles */}
         <div style={{ position:"absolute", width:400, height:400, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.15)", top:"50%", left:"50%", transform:"translate(-50%,-50%)", pointerEvents:"none" }} />
@@ -122,22 +122,22 @@ export default function PageHome() {
           style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, pointerEvents:"none" }}>+</motion.div>
 
         {/* Photo frame */}
-        <div style={{ position:"relative", zIndex:2 }}>
+        <div style={{ position:"relative", zIndex:2, overflow:"visible" }}>
 
           {/* Teal offset rectangle behind photo */}
-          <div style={{ position:"absolute", top:16, left:16, width:300, height:360, border:"2px solid rgba(0,188,212,0.4)", borderRadius:2, zIndex:0 }} />
+          <div style={{ position:"absolute", top:16, left:16, width:320, height:400, border:"2px solid rgba(0,188,212,0.6)", borderRadius:2, zIndex:0 }} />
 
           {/* Pink offset rectangle */}
-          <div style={{ position:"absolute", top:-10, left:-10, width:300, height:360, border:"1px solid rgba(233,30,140,0.25)", borderRadius:2, zIndex:0 }} />
+          <div style={{ position:"absolute", top:-10, left:-10, width:320, height:400, border:"2px solid rgba(233,30,140,0.4)", borderRadius:2, zIndex:0 }} />
 
           {/* Circle behind top right */}
           <div style={{ position:"absolute", top:-30, right:-30, width:120, height:120, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.2)", zIndex:0 }} />
           <div style={{ position:"absolute", top:-15, right:-15, width:80, height:80, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.15)", zIndex:0 }} />
 
           {/* The actual photo div stays the same */}
-          <div style={{ position:"relative", width:300, height:360, zIndex:1, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
+          <div style={{ position:"relative", width:320, height:400, zIndex:1, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
           <img src="/avatar.jpg" alt="Sai Venkat Boyapati"
-            style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top",
+            style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center 15%",
               filter:"contrast(1.05) brightness(0.95)",
               clipPath:"polygon(0 4%, 4% 0, 100% 0, 100% 96%, 96% 100%, 0 100%)" }} />
 
@@ -149,10 +149,10 @@ export default function PageHome() {
             style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg,transparent,rgba(0,188,212,0.7),transparent)", pointerEvents:"none", zIndex:3 }} />
 
           {/* Corner brackets */}
-          <div style={{ position:"absolute", top:10, left:10, width:32, height:32, borderTop:"2px solid var(--teal)", borderLeft:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", top:10, right:10, width:32, height:32, borderTop:"2px solid var(--teal)", borderRight:"2px solid var(--teal)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, left:10, width:32, height:32, borderBottom:"2px solid var(--pink)", borderLeft:"2px solid var(--pink)", opacity:0.8 }} />
-          <div style={{ position:"absolute", bottom:10, right:10, width:32, height:32, borderBottom:"2px solid var(--pink)", borderRight:"2px solid var(--pink)", opacity:0.8 }} />
+          <div style={{ position:"absolute", top:10, left:10, width:40, height:40, borderTop:"3px solid var(--teal)", borderLeft:"3px solid var(--teal)", opacity:0.8 }} />
+          <div style={{ position:"absolute", top:10, right:10, width:40, height:40, borderTop:"3px solid var(--teal)", borderRight:"3px solid var(--teal)", opacity:0.8 }} />
+          <div style={{ position:"absolute", bottom:10, left:10, width:40, height:40, borderBottom:"3px solid var(--pink)", borderLeft:"3px solid var(--pink)", opacity:0.8 }} />
+          <div style={{ position:"absolute", bottom:10, right:10, width:40, height:40, borderBottom:"3px solid var(--pink)", borderRight:"3px solid var(--pink)", opacity:0.8 }} />
 
           {/* Available badge */}
           <motion.div animate={{ y:[0,-5,0] }} transition={{ duration:3, repeat:Infinity, ease:"easeInOut" }}
