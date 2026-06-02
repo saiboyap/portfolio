@@ -121,6 +121,10 @@ export default function PageHome() {
         <motion.div animate={{ y:[0,10,0] }} transition={{ duration:4, repeat:Infinity, ease:"easeInOut", delay:1.5 }}
           style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, pointerEvents:"none" }}>+</motion.div>
 
+        {/* Large teal circle background */}
+        <div style={{ position:"absolute", top:-80, right:-80, width:320, height:320, borderRadius:"50%", background:"radial-gradient(circle, rgba(0,188,212,0.15) 0%, rgba(0,188,212,0.05) 50%, transparent 70%)", pointerEvents:"none", zIndex:0 }} />
+        <div style={{ position:"absolute", top:-40, right:-40, width:220, height:220, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.2)", pointerEvents:"none", zIndex:0 }} />
+
         {/* Photo frame */}
         <div style={{ position:"relative", zIndex:2, overflow:"visible" }}>
 
@@ -133,6 +137,9 @@ export default function PageHome() {
           {/* Circle behind top right */}
           <div style={{ position:"absolute", top:-30, right:-30, width:120, height:120, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.2)", zIndex:0 }} />
           <div style={{ position:"absolute", top:-15, right:-15, width:80, height:80, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.15)", zIndex:0 }} />
+
+          {/* Pink vertical accent bar */}
+          <div style={{ position:"absolute", left:-8, top:"15%", bottom:"15%", width:3, background:"linear-gradient(to bottom, transparent, var(--pink), transparent)", borderRadius:2, zIndex:3 }} />
 
           {/* The actual photo div stays the same */}
           <div style={{ position:"relative", width:320, height:400, zIndex:1, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
@@ -147,6 +154,9 @@ export default function PageHome() {
           {/* Scan line */}
           <motion.div animate={{ top:["-5%","105%"] }} transition={{ duration:3.5, repeat:Infinity, ease:"linear", repeatDelay:2 }}
             style={{ position:"absolute", left:0, right:0, height:2, background:"linear-gradient(90deg,transparent,rgba(0,188,212,0.7),transparent)", pointerEvents:"none", zIndex:3 }} />
+
+          {/* Teal horizontal accent line */}
+          <div style={{ position:"absolute", top:"50%", left:0, right:0, height:2, background:"linear-gradient(90deg, transparent, rgba(0,188,212,0.6), transparent)", transform:"translateY(-50%)", pointerEvents:"none", zIndex:2 }} />
 
           {/* Corner brackets */}
           <div style={{ position:"absolute", top:10, left:10, width:40, height:40, borderTop:"3px solid var(--teal)", borderLeft:"3px solid var(--teal)", opacity:0.8 }} />
