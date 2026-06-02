@@ -27,7 +27,7 @@ export default function PageHome() {
   }, [charIdx,deleting,roleIdx]);
 
   return (
-    <div style={{ width:"100vw", height:"100vh", display:"grid", gridTemplateColumns:"52% 48%", background:"var(--bg)", position:"relative", overflow:"hidden" }}>
+    <div style={{ width:"100vw", height:"100vh", display:"grid", gridTemplateColumns:"53% 47%", background:"var(--bg)", position:"relative", overflow:"hidden" }}>
 
       {/* Decorative elements */}
       <div className="circle-deco" style={{ width:300, height:300, top:"5%", left:"5%", borderColor:"rgba(0,188,212,0.15)" }} />
@@ -95,6 +95,13 @@ export default function PageHome() {
           </button>
           <span style={{ fontSize:12, fontWeight:600, color:"var(--text)", letterSpacing:"0.08em", textTransform:"uppercase" }}>My Experience</span>
         </motion.div>
+      </div>
+
+      {/* Divider with vertical text */}
+      <div style={{ position:"absolute", left:"53%", top:0, bottom:0, width:1, background:"rgba(30,37,53,0.1)", zIndex:3, display:"flex", alignItems:"center", justifyContent:"center" }}>
+        <div style={{ fontSize:10, color:"var(--muted)", writingMode:"vertical-rl", letterSpacing:"0.25em", textTransform:"uppercase", opacity:0.6 }}>
+          I'M SENIOR SOFTWARE ENGINEER
+        </div>
       </div>
 
       <motion.div initial={{ opacity:0, x:40 }} animate={{ opacity:1, x:0 }} transition={{ duration:1, delay:0.3 }}
