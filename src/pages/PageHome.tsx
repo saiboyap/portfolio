@@ -123,6 +123,16 @@ export default function PageHome() {
         <motion.div animate={{ y:[0,10,0] }} transition={{ duration:4, repeat:Infinity, ease:"easeInOut", delay:1.5 }}
           style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, pointerEvents:"none" }}>+</motion.div>
 
+        {/* Animated rotating ring */}
+        <motion.div animate={{ rotate:360 }} transition={{ duration:20, repeat:Infinity, ease:"linear" }}
+          style={{ position:"absolute", width:460, height:460, borderRadius:"50%", border:"1px dashed rgba(0,188,212,0.15)", pointerEvents:"none", zIndex:1 }} />
+
+        {/* Pink vertical accent bar left of photo */}
+        <div style={{ position:"absolute", left:"calc(50% - 160px)", top:"20%", bottom:"20%", width:4, background:"linear-gradient(to bottom, transparent, var(--pink), transparent)", borderRadius:2, zIndex:3, pointerEvents:"none" }} />
+
+        {/* Teal offset frame behind photo */}
+        <div style={{ position:"absolute", width:280, height:340, top:"50%", left:"50%", transform:"translate(calc(-50% + 12px), calc(-50% + 12px))", border:"1px solid rgba(0,188,212,0.35)", borderRadius:2, zIndex:1, pointerEvents:"none" }} />
+
         {/* Photo frame */}
         <div style={{ position:"relative", width:280, height:340, zIndex:2 }}>
 
