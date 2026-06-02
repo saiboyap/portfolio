@@ -122,7 +122,20 @@ export default function PageHome() {
           style={{ position:"absolute", bottom:"28%", right:"8%", fontSize:16, color:"var(--pink)", opacity:0.5, pointerEvents:"none" }}>+</motion.div>
 
         {/* Photo frame */}
-        <div style={{ position:"relative", width:300, height:360, zIndex:2, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
+        <div style={{ position:"relative", zIndex:2 }}>
+
+          {/* Teal offset rectangle behind photo */}
+          <div style={{ position:"absolute", top:16, left:16, width:300, height:360, border:"2px solid rgba(0,188,212,0.4)", borderRadius:2, zIndex:0 }} />
+
+          {/* Pink offset rectangle */}
+          <div style={{ position:"absolute", top:-10, left:-10, width:300, height:360, border:"1px solid rgba(233,30,140,0.25)", borderRadius:2, zIndex:0 }} />
+
+          {/* Circle behind top right */}
+          <div style={{ position:"absolute", top:-30, right:-30, width:120, height:120, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.2)", zIndex:0 }} />
+          <div style={{ position:"absolute", top:-15, right:-15, width:80, height:80, borderRadius:"50%", border:"1px solid rgba(0,188,212,0.15)", zIndex:0 }} />
+
+          {/* The actual photo div stays the same */}
+          <div style={{ position:"relative", width:300, height:360, zIndex:1, boxShadow:"0 24px 60px rgba(0,0,0,0.15)" }}>
           <img src="/avatar.jpg" alt="Sai Venkat Boyapati"
             style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top",
               filter:"contrast(1.05) brightness(0.95)",
@@ -157,6 +170,7 @@ export default function PageHome() {
             <div style={{ fontSize:9, color:"var(--muted)", marginBottom:2 }}>Current Role</div>
             <div style={{ fontSize:13, color:"var(--text)", fontWeight:700 }}>Senior Software Engineer @ PayPal</div>
           </motion.div>
+          </div>
         </div>
 
         {/* MY PROJECTS button */}
